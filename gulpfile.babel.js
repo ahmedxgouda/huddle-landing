@@ -63,7 +63,7 @@ function use_min() {
     .pipe(flatmap((stream, file) => {
         return stream
         .pipe(usemin({
-            css: [rev()],
+            css: [cleanCss(), rev()],
             html: [() => { return htmlmin({ collapseWhitespace: true }); }],
             js: [uglify(), rev()],
             inlinejs: [uglify()],
