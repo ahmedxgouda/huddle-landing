@@ -37,7 +37,7 @@ h2 {
 .box {
   box-shadow: 1px 1px 10px rgba(128, 141, 153, 0.2);
   border-radius: 5px;
-  margin: 10px auto;
+  margin: 15px auto;
   padding: 3em 4em;
   display: grid;
   grid-template-columns: repeat(6, 1fr); }
@@ -106,7 +106,8 @@ header {
             justify-content: flex-end;
             align-self: center; }
         header .container .header nav img {
-          height: fit-content; }
+          height: fit-content;
+          align-self: center; }
         header .container .header nav a {
           justify-self: flex-end;
           align-self: center;

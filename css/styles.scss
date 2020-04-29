@@ -39,7 +39,7 @@ h2 {
 .box {            
       box-shadow: 1px 1px 10px hsla(208, 11%, 55%, 0.2);
       border-radius: 5px;
-      margin: 10px auto;
+      margin: 15px auto;
       padding: 3em 4em;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -126,6 +126,7 @@ header {
                         }                          
                         img {
                               height: fit-content;
+                              align-self: center;
                         }                    
                         a {
                               justify-self: flex-end;
