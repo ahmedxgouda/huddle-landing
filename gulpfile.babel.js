@@ -1,20 +1,20 @@
 // jshint esversion: 6
 // Declaring
-import {watch, src, dest, series} from 'gulp';
-import sass  from 'gulp-sass';    
-import browserSync  from 'browser-sync';
-import del  from 'del';
-import imagemin  from 'gulp-imagemin';
-import uglify  from 'gulp-uglify';
-import cleanCss  from 'gulp-clean-css';
-import usemin  from 'gulp-usemin';
-import htmlmin  from 'gulp-htmlmin';
-import rev  from 'gulp-rev';
-import flatmap  from 'gulp-flatmap';
+import {watch, parallel, src, dest, series} from 'gulp';
+import sass, {logError} from 'gulp-sass';
+import {init} from 'browser-sync';
+import del from 'del';
+import imagemin from 'gulp-imagemin';
+import uglify from 'gulp-uglify';
+import cleanCss from 'gulp-clean-css';
+import usemin from 'gulp-usemin';
+import htmlmin from 'gulp-htmlmin';
+import rev from 'gulp-rev';
+import flatmap from 'gulp-flatmap';
 // functions
 function css() {
     return src('./css/*.scss')
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass().on('error', logError))
         .pipe(dest('./css'));
 }
 function sass_watch(done) {
@@ -29,7 +29,7 @@ function browser_sync(done) {
         './img/*.{png,jpg,gif}',
         './svg/*.svg'
     ];
-    browserSync.init(files, {
+    init(files, {
         server: {
             baseDir: './'
         }
@@ -89,5 +89,5 @@ const _usemin = use_min;
 export {_usemin as usemin};
 const build = series(clean, copy_fonts, image_min, svg_min, use_min);
 export {build as build};
-const _default = series(browser_sync, sass_watch);
+const _default = parallel(browser_sync, sass_watch);
 export {_default as default};
