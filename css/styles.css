@@ -3,6 +3,7 @@
   --paleCyan: hsl(193, 100%, 96%);
   --darkCyan: hsl(192, 100%, 9%);
   --greyishBlue: hsl(208, 11%, 55%);
+  --almostWhite: rgba(255, 255, 255, 0.8);
   --auto-grid-min-size: 20rem; }
 
 body {
@@ -26,48 +27,6 @@ h2 {
   font-family: 'Poppins', sans-serif;
   color: var(--darkCyan); }
 
-header {
-  width: 100%; }
-  header .container {
-    padding: 30px 35px;
-    width: 100%;
-    background: url("../images/bg-hero-desktop.svg");
-    background-size: cover;
-    background-color: var(--paleCyan); }
-    header .container .header {
-      display: flex;
-      flex-wrap: wrap; }
-      header .container .header nav {
-        width: 100%;
-        display: flex;
-        margin-bottom: 50px; }
-        header .container .header nav .container {
-          display: flex; }
-          header .container .header nav .container div {
-            justify-content: flex-end;
-            align-self: center; }
-        header .container .header nav img {
-          height: fit-content; }
-        header .container .header nav a {
-          justify-self: flex-end;
-          align-self: center;
-          margin-left: auto; }
-      header .container .header > div {
-        padding: 80px 0; }
-        header .container .header > div .text {
-          display: flex;
-          flex-wrap: wrap; }
-          header .container .header > div .text h2 {
-            line-height: 1.8;
-            font-size: 1.8em; }
-          header .container .header > div .text p {
-            margin-top: 0;
-            width: 80%; }
-          header .container .header > div .text .btn {
-            height: fit-content; }
-        header .container .header > div img {
-          width: 100%; }
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -87,7 +46,7 @@ header {
   .box .image {
     grid-column: 5 / 7; }
   .box p {
-    color: var(--darkCyan); }
+    color: var(--greyishBlue); }
   .box img {
     width: 100%; }
   .box:nth-of-type(2) .text {
@@ -126,9 +85,54 @@ header {
     background-color: white;
     color: var(--darkCyan); }
 
+header {
+  width: 100%; }
+  header .container {
+    padding: 30px 35px;
+    width: 100%;
+    background: url("../images/bg-hero-desktop.svg");
+    background-size: cover;
+    background-color: var(--paleCyan); }
+    header .container .header {
+      display: flex;
+      flex-wrap: wrap; }
+      header .container .header nav {
+        width: 100%;
+        display: flex;
+        margin-bottom: 50px; }
+        header .container .header nav .container {
+          display: flex; }
+          header .container .header nav .container div {
+            justify-content: flex-end;
+            align-self: center; }
+        header .container .header nav img {
+          height: fit-content; }
+        header .container .header nav a {
+          justify-self: flex-end;
+          align-self: center;
+          margin-left: auto; }
+      header .container .header > div {
+        padding: 80px 0; }
+        header .container .header > div .text {
+          display: flex;
+          flex-wrap: wrap; }
+          header .container .header > div .text h2 {
+            line-height: 1.8;
+            font-size: 1.8em;
+            align-self: flex-end;
+            margin: 0; }
+          header .container .header > div .text p {
+            margin: 0;
+            width: 80%;
+            align-self: center; }
+          header .container .header > div .text .btn {
+            height: fit-content; }
+        header .container .header > div img {
+          width: 100%; }
+
 footer {
   font-size: 0.8em;
-  color: rgba(255, 255, 255, 0.8); }
+  color: var(--almostWhite); }
   footer .container {
     background-color: var(--darkCyan);
     grid-template-columns: 1fr;
@@ -167,11 +171,11 @@ footer {
           margin: 18px; }
           footer .container .wrapper ul li a {
             text-decoration: none;
-            color: rgba(255, 255, 255, 0.8); }
+            color: var(--almostWhite); }
         footer .container .wrapper ul.social {
           display: flex; }
           footer .container .wrapper ul.social .icon-circle {
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--almostWhite);
             border-radius: 15px;
             padding: 4px 7px; }
           footer .container .wrapper ul.social li {

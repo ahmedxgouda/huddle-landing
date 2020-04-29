@@ -1,8 +1,10 @@
+// Global
 :root {
       --pink: hsl(322, 100%, 66%);
       --paleCyan: hsl(193, 100%, 96%);
       --darkCyan: hsl(192, 100%, 9%);
       --greyishBlue: hsl(208, 11%, 55%);
+      --almostWhite: rgba(255, 255, 255, 0.8);
       --auto-grid-min-size: 20rem;
 }
 body {
@@ -26,62 +28,6 @@ h2 {
       font-family: 'Poppins', sans-serif;
       color: var(--darkCyan)
 }
-header {     
-      width: 100%;
-      .container {
-            padding: 30px 35px;
-            width: 100%;
-            background: url("../images/bg-hero-desktop.svg");
-            background-size: cover;
-            background-color: var(--paleCyan);
-            .header {
-                  display: flex;
-                  flex-wrap: wrap;
-                  nav {
-                        width: 100%;
-                        display: flex;
-                        margin-bottom: 50px;  
-                        .container {
-                              display: flex;  
-                              div {
-                                    justify-content: flex-end;
-                                    align-self: center;
-                              }
-                        }                          
-                        img {
-                              height: fit-content;
-                        }                    
-                        a {
-                              justify-self: flex-end;
-                              align-self: center;
-                              margin-left: auto;
-                        }
-                  }
-                  > div {                        
-                        padding: 80px 0;
-                        .text { 
-                              display: flex;
-                              flex-wrap: wrap;
-                              h2 {
-                                    // width: 35%;
-                                    line-height: 1.8;
-                                    font-size: 1.8em;
-                              }
-                              p {
-                                    margin-top: 0;
-                                    width: 80%;
-                              }                                                        
-                              .btn {
-                                    height: fit-content;
-                              }       
-                        }
-                        img {
-                              width: 100%;                                                           
-                        }     
-                  }
-            }
-      }
-}
 .wrapper {
       display: flex;
       flex-direction: column;
@@ -89,6 +35,7 @@ header {
       width: 90%;
       margin: 0 auto;
 }
+// Boxes
 .box {            
       box-shadow: 1px 1px 10px hsla(208, 11%, 55%, 0.2);
       border-radius: 5px;
@@ -103,7 +50,7 @@ header {
             grid-column: 5 / 7;
       }
       p {
-            color: var(--darkCyan)
+            color: var(--greyishBlue);            
       }
       img {
             width: 100%;
@@ -118,6 +65,7 @@ header {
             }
       }
 }
+// Popup Box
 .popup {
       display: flex;
       flex-direction: column;
@@ -152,9 +100,71 @@ header {
             color: var(--darkCyan);
       }
 }
+// Header
+header {     
+      width: 100%;
+      .container {
+            padding: 30px 35px;
+            width: 100%;
+            background: url("../images/bg-hero-desktop.svg");
+            background-size: cover;
+            background-color: var(--paleCyan);
+            .header {
+                  display: flex;
+                  flex-wrap: wrap;
+                  // Top Header
+                  nav {
+                        width: 100%;
+                        display: flex;
+                        margin-bottom: 50px;  
+                        .container {
+                              display: flex;  
+                              div {
+                                    justify-content: flex-end;
+                                    align-self: center;
+                              }
+                        }                          
+                        img {
+                              height: fit-content;
+                        }                    
+                        a {
+                              justify-self: flex-end;
+                              align-self: center;
+                              margin-left: auto;
+                        }
+                  }
+                  // Header Content
+                  > div {                        
+                        padding: 80px 0;
+                        .text { 
+                              display: flex;
+                              flex-wrap: wrap;
+                              h2 {                                    
+                                    line-height: 1.8;
+                                    font-size: 1.8em;
+                                    align-self: flex-end;
+                                    margin: 0;
+                              }
+                              p {
+                                    margin: 0;
+                                    width: 80%;
+                                    align-self: center;
+                              }                                                        
+                              .btn {
+                                    height: fit-content;
+                              }       
+                        }
+                        img {
+                              width: 100%;                                                           
+                        }     
+                  }
+            }
+      }
+}
+// Footer
 footer {
       font-size: 0.8em;
-      color: rgba(255, 255, 255, 0.8);
+      color: var(--almostWhite);
       .container {
             background-color: var(--darkCyan);
             grid-template-columns: 1fr;
@@ -165,13 +175,15 @@ footer {
             .wrapper {
                   flex-direction: row;
                   width: 100%;
-                  margin: 0;                  
+                  margin: 0;
+                  // Lists               
                   ul {  
                         padding-left: 0;   
                         line-height: 1.5;                        
                         &:first-of-type {
                               flex: 3 0 0;
                               li { 
+                                    // Adding Icons
                                     padding-left: 30px;
                                     position: relative;                              
                                     &::before {
@@ -201,13 +213,13 @@ footer {
                               margin: 18px;
                               a {
                                     text-decoration: none;     
-                                    color: rgba(255, 255, 255, 0.8);                               
+                                    color: var(--almostWhite);                               
                               }
                         }
                         &.social {
                               display: flex;
                               .icon-circle {
-                                    border: 1px solid rgba(255, 255, 255, 0.8);
+                                    border: 1px solid var(--almostWhite);
                                     border-radius: 15px;
                                     padding: 4px 7px;
                               }
