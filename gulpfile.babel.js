@@ -5,7 +5,6 @@ import sass, {logError} from 'gulp-sass';
 import {init} from 'browser-sync';
 import del from 'del';
 import imagemin from 'gulp-imagemin';
-import uglify from 'gulp-uglify';
 import cleanCss from 'gulp-clean-css';
 import usemin from 'gulp-usemin';
 import htmlmin from 'gulp-htmlmin';
@@ -40,23 +39,16 @@ function clean() {
     return del(['dist']);
 }
 function copy_fonts(done) {
-    src('./node_modules/font-awesome/fonts/**/*.*')
-    .pipe(dest('./dist/fonts'));
+    src('./node_modules/@fortawesome/fontawesome-free/webfonts/**/*.*')
+    .pipe(dest('./dist/webfonts'));
     done();
 }
 function image_min() {
-    return src('./img/*.{png,jpg,gif,ico}')
+    return src('./images/*.{png,jpg,gif,ico,svg}')
         .pipe(imagemin(
             { optimizationLevel: 3, progressive: true, interlaced: true }
         ))
-        .pipe(dest('dist/img'));
-}
-function svg_min() {
-    return src('./svg/*.svg')
-        .pipe(imagemin(
-            { optimizationLevel: 3, progressive: true, interlaced: true }
-        ))
-        .pipe(dest('dist/svg'));
+        .pipe(dest('dist/images'));
 }
 function use_min() {
     return src('./*.html')
@@ -65,8 +57,6 @@ function use_min() {
         .pipe(usemin({
             css: [cleanCss(), rev()],
             html: [() => { return htmlmin({ collapseWhitespace: true }); }],
-            js: [uglify(), rev()],
-            inlinejs: [uglify()],
             inlinecss: [cleanCss(), 'concat']
         }));
     }))
@@ -87,7 +77,7 @@ const _imagemin = image_min;
 export {_imagemin as imagemin};
 const _usemin = use_min;
 export {_usemin as usemin};
-const build = series(clean, copy_fonts, image_min, svg_min, use_min);
+const build = series(clean, copy_fonts, image_min, use_min);
 export {build as build};
 const _default = parallel(browser_sync, sass_watch);
 export {_default as default};
