@@ -192,9 +192,11 @@ footer {
     text-align: center;
     justify-content: center; } }
 
-@media (max-width: 500px) {
+@media (max-width: 360px) {
   :root {
-    --auto-grid-min-size: 10rem; }
+    --auto-grid-min-size: 10rem; } }
+
+@media (max-width: 500px) {
   main .wrapper {
     width: 100%; }
   .box {
@@ -203,7 +205,9 @@ footer {
 
 @media (max-width: 579px) {
   .box h2 {
-    font-size: 1.2em !important; } }
+    font-size: 1.2em !important; }
+  header .container {
+    background-image: url(../images/bg-hero-mobile.svg) no-repeat; } }
 
 @media (max-width: 768px) {
   .popup {
