@@ -44,7 +44,7 @@ function copy_fonts(done) {
     done();
 }
 function image_min() {
-    return src('./images/*.{png,jpg,gif,ico,svg}')
+    return src('./images/*.*')
         .pipe(imagemin(
             { optimizationLevel: 3, progressive: true, interlaced: true }
         ))

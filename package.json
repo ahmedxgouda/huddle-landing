@@ -29,11 +29,12 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-flatmap": "^1.0.2",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^7.1.0",
+    "gulp-imagemin": "^3.4.0",
     "gulp-rev": "^9.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify": "^3.0.2",
     "gulp-usemin": "^0.3.30",
+    "imagemin": "^7.0.1",
     "node-sass": "^4.14.0"
   },
   "babel": {
