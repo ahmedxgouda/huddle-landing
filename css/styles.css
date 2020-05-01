@@ -61,7 +61,8 @@ h2 {
   position: absolute;
   z-index: 2;
   top: 7%;
-  right: 25%; }
+  left: 50%;
+  margin-left: -25%; }
   .popup .btn {
     align-self: center; }
 
@@ -196,24 +197,22 @@ footer {
   :root {
     --auto-grid-min-size: 10rem; } }
 
-@media (max-width: 500px) {
-  main .wrapper {
-    width: 100%; }
+@media (max-width: 561px) {
+  header .container {
+    background-image: url(../images/bg-hero-mobile.svg) no-repeat; }
   .box {
     --box-grid-min-size: 12rem;
-    padding: 1em 2em; } }
+    padding: 1em 2em; }
+  main .wrapper {
+    width: 100%; } }
 
-@media (max-width: 579px) {
-  .box h2 {
-    font-size: 1.2em !important; }
-  header .container {
-    background-image: url(../images/bg-hero-mobile.svg) no-repeat; } }
-
-@media (max-width: 768px) {
+@media (max-width: 750px) {
   .popup {
     width: 90%;
-    top: 47%;
-    right: 5%; } }
+    top: 60%;
+    margin-left: -45%; }
+  .box h2 {
+    font-size: 1.2em !important; } }
 
 @media (max-width: 1053px) {
   .header p {
@@ -224,20 +223,23 @@ footer {
     text-align: center;
     order: 2; }
   article.box .image {
-    order: 1; } }
-
-@media (min-width: 769px) and (max-width: 1053px) {
+    order: 1; }
   .popup {
-    width: 600px;
-    right: 21%; } }
+    padding: 1em 2em; } }
 
-@media (max-width: 808px) {
+@media (max-width: 768px) {
   body {
     font-size: 0.9em; }
   .header h2 {
     font-size: 1.4em !important; } }
 
-@media (max-width: 805px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .popup {
+    width: 80%;
+    margin-left: -40%;
+    top: 47%; } }
+
+@media (max-width: 700px) {
   footer .responsive-grid {
     grid-gap: 0; }
   footer .wrapper {
@@ -245,6 +247,6 @@ footer {
     footer .wrapper .social {
       justify-content: center;
       margin-top: 0; }
-  .copy {
+  footer .copy {
     text-align: center !important;
     margin-top: 0; } }

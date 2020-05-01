@@ -70,7 +70,8 @@ h2 {
       position: absolute;
       z-index: 2;
       top: 7%;
-      right: 25%;
+      left: 50%;
+      margin-left: -25%;
       .btn {
             align-self: center;
       }
@@ -169,6 +170,7 @@ footer {
                         padding-left: 0;   
                         line-height: 1.5;                        
                         &:first-of-type {
+                              // take small width
                               flex: 3 0 0;
                               li { 
                                     // Adding Icons
@@ -194,12 +196,15 @@ footer {
                               }
                         }
                         &:nth-of-type(2), &:nth-of-type(3), &:last-of-type {
+                              // take a larger width
                               flex: 1.5 0 0;
                         }                                   
                         li {
                               list-style: none;
+                              // For the Readability
                               margin: 18px;
                               a {
+                                    // Styling the Links
                                     text-decoration: none;     
                                     color: var(--almostWhite);
                                     &:hover {
@@ -207,14 +212,18 @@ footer {
                                     }                               
                               }
                         }
+                        // Social icons
                         &.social {
+                              // Make it in one line
                               display: flex;
                               .icon-circle {
+                                    // Add border around the icons
                                     border: 1px solid var(--almostWhite);
                                     border-radius: 15px;
                                     padding: 4px 7px;
                               }
                               li {
+                                    // Adding the same margin-top and bottom of the others list items and small margin between the social icons
                                     margin: 20px 5px;
                                     
                               }
@@ -226,6 +235,7 @@ footer {
             }
       }
 }
+// Responsive
 @media (max-width: 647px) {
       .header {
             .container {
@@ -251,35 +261,34 @@ footer {
             justify-content: center;
       }
 }
+// To not overflow on the small screens
 @media (max-width: 360px) {
       :root {
             --auto-grid-min-size: 10rem;
       }
 }
-@media (max-width: 500px) {
-      main .wrapper {
-            width: 100%;
+// Make it beauty on the smaller screens
+// decrease padding 
+@media (max-width: 561px) {
+      header .container {
+            background-image: url(../images/bg-hero-mobile.svg) no-repeat;
       }
       .box {
             --box-grid-min-size: 12rem;
             padding: 1em 2em
       }
-}
-@media (max-width: 579px) {
-      .box h2 {
-            font-size: 1.2em !important;
-      }
-      header .container {
-            background-image: url(../images/bg-hero-mobile.svg) no-repeat;
-            // background-size: cover;
-            // background-color: var(--paleCyan);
+      main .wrapper {
+            width: 100%;
       }
 }
-@media (max-width: 768px) {
+@media (max-width: 750px) {
       .popup {
             width: 90%;
-            top: 47%;
-            right: 5%;
+            top: 60%;            
+            margin-left: -45%;
+      }
+      .box h2 {
+            font-size: 1.2em !important;
       }
 }
 @media (max-width: 1053px) {
@@ -300,14 +309,12 @@ footer {
                   order: 1;
             }
       }
-}
-@media (min-width: 769px) and (max-width: 1053px) {
       .popup {
-            width: 600px;
-            right: 21%;
+            padding: 1em 2em;
       }
 }
-@media (max-width: 808px) {
+
+@media (max-width: 768px) {
       body {
             font-size: 0.9em;
       }
@@ -316,8 +323,16 @@ footer {
                   font-size: 1.4em !important;
             }
       }
+
 }
-@media (max-width: 805px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+      .popup {
+            width: 80%;
+            margin-left: -40%;
+            top: 47%;
+      }
+}
+@media (max-width: 700px) {
       footer {
             .responsive-grid {
                   grid-gap: 0;
@@ -329,9 +344,9 @@ footer {
                         margin-top: 0
                   }
             }
-      }
-      .copy {
-            text-align: center !important;
-            margin-top: 0;
+            .copy {
+                  text-align: center !important;
+                  margin-top: 0;
+            }
       }
 }
