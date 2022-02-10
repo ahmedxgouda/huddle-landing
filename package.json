@@ -35,7 +35,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-usemin": "^0.3.30",
     "imagemin": "^7.0.1",
-    "node-sass": "^4.14.0"
+    "node-sass": "^7.0.0"
   },
   "babel": {
     "presets": [
